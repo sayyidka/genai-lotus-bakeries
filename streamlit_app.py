@@ -46,7 +46,7 @@ product_launch = st.sidebar.radio(
     ("New product", "Seasonal product"),
 )
 
-product_launch_date = st.sidebar.date_input("Launch Date", format="MM/DD/YYYY")
+product_launch_date = st.sidebar.date_input("Product Launch Date", format="MM/DD/YYYY")
 
 budget = st.sidebar.slider(
     "Budget (€)", value=50000, min_value=10000, max_value=500000, step=1000
@@ -101,9 +101,9 @@ if st.sidebar.button("Generate"):
         prompt = f"""
         You are a marketing expert, and your task is to help me launch a marketing campaign for Lotus Bakeries in Belgium.
         I'll provide you with essential data. Determine the best timing to maximize the impact of our campaign.
-        Give a very detailed planning of the timing, begin with the campaign start date. Include the steps duration. Don't recap the input data.
+        Give a very detailed planning of the timing, begin by giving the campaign start date. Include the steps duration. Don't recap the input data.
         Please consider all the following details when providing your timing recommendation:
-        Season: The campaign is related to {season}.
+        Season: The campaign is related to {season} season.
         Product Launch: We are planning to either launch a {product_launch} on {product_launch_date}.
         Budget: Our campaign budget is set at {budget} €.
         Channels: We are considering using the following marketing channels : {"".join(channels)}.
